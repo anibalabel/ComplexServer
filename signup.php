@@ -27,8 +27,8 @@ if($reg_user->is_logged_in()!="")
         else
 		return false;
 	}
-$connection = mysql_connect("localhost", "worhost_complex", "eb03f2b332");
-$db_select = mysql_select_db("worhost_complexserver", $connection);
+$connection = mysql_connect("localhost", "gamerfa1_xino", "x5083038s");
+$db_select = mysql_select_db("gamerfa1_xino", $connection);
 $result = mysql_query("SELECT COUNT(*) FROM tbl_users WHERE registerIP = '{$_SERVER['REMOTE_ADDR']}'"); 
 $count = mysql_fetch_row($result); 	
 if (!empty($count[0])) die('Your IP has already been used');
@@ -69,7 +69,7 @@ if(isset($_POST['btn-signup']))
 						Welcome to Coding Cage!<br/>
 						To complete your registration  please , just click following link<br/>
 						<br /><br />
-						<a href='http://worhost.net/complexserver/verify.php?id=$id&code=$code'>Click HERE to Activate :)</a>
+						<a href='http://gamerfans.net/ts3/verify.php?id=$id&code=$code'>Click HERE to Activate :)</a>
 						<br /><br />
 						Thanks,";
 						
@@ -97,24 +97,39 @@ if(isset($_POST['btn-signup']))
   <head>
     <title>Signup | Coding Cage</title>
     <!-- Bootstrap -->
-    <link href="desing/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="desing/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-    <link href="desing/assets/styles.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="desing/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="desing/dist/css/AdminLTE.min.css">
+		<link rel="stylesheet" href="desing/plugins/iCheck/square/blue.css">
      <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="desing/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
   </head>
-  <body id="login">
-    <div class="container">
+  <body class="hold-transition login-page" id="login">
+    <div class="login-box">
 				<?php if(isset($msg)) echo $msg;  ?>
       <form class="form-signin" method="post">
-        <h2 class="form-signin-heading">Sign Up</h2><hr />
-        <input type="text" class="input-block-level" placeholder="Username" name="txtuname" required />
-        <input type="email" class="input-block-level" placeholder="Email address" name="txtemail" required />
-        <input type="password" class="input-block-level" placeholder="Password" name="txtpass" required />
-     	<hr />
+        			<div class="login-logo">
+				<a href="index.php"><b>ComplexServer</b>By EscuderoKevin</a>
+			</div>
+       <!-- /.signup-logo -->
+       <p class="login-box-msg">Registrar Nuevo Ts3</p>
+       <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Username" name="txtuname" required />
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+		  </div>
+       <div class="form-group has-feedback">
+        <input type="email" class="form-control" placeholder="Email address" name="txtemail" required />
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+		  </div>
+       <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Password" name="txtpass" required />
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+		  </div>
+       <hr />
         <button class="btn btn-large btn-primary" type="submit" name="btn-signup">Sign Up</button>
         <a href="index.php" style="float:right;" class="btn btn-large">Sign In</a>
       </form>
